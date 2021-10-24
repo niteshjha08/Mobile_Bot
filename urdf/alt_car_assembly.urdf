@@ -162,8 +162,8 @@
     <axis
       xyz="0 0 1" />
   	<limit
-	  effort="10"
-	  velocity="1" />
+	  effort="100"
+	  velocity="10" />
   </joint>
   <link
     name="hub_f_r">
@@ -277,8 +277,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-	  effort="10"
-	  velocity="1" />
+	  effort="100"
+	  velocity="10" />
   </joint>
   <link
     name="hub_r_r">
@@ -386,8 +386,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-	  effort="10"
-	  velocity="1" />
+	  effort="100"
+	  velocity="10" />
     
   </joint>
   <link
@@ -496,8 +496,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-	  effort="10"
-	  velocity="1" />
+	  effort="100"
+	  velocity="10" />
   </joint>
 
   <transmission name="simple_trans">
@@ -525,22 +525,22 @@
   <transmission name="simple_trans_3">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rear_left_axle">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
     <actuator name="left_drive">
       <mechanicalReduction>50</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </actuator>
   </transmission>
 
   <transmission name="simple_trans_4">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rear_right_axle">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
     <actuator name="right_drive">
       <mechanicalReduction>50</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </actuator>
   </transmission>
 

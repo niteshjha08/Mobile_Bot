@@ -6,22 +6,22 @@ joint_state_controller:
 controller_1: # change the name
   type: effort_controllers/JointPositionController # Type of controller. 
   joint: front_right_steering # Name of the joint.  
-  pid : {p: 20.0 , i: 0.0 , d: 0.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0} 
+  pid : {p: 200.0 , i: 0.0 , d: 0.0} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0} 
 
 controller_2: # change the name
   type: effort_controllers/JointPositionController # Type of controller. 
   joint: front_left_steering # Name of the joint.  
-  pid : {p: 20.0 , i: 0.0 , d: 0.0}
+  pid : {p: 200.0 , i: 0.0 , d: 0.0}
 
 controller_3: # change the name
-  type: effort_controllers/JointPositionController # Type of controller. 
+  type: velocity_controllers/JointVelocityController # Type of controller. 
   joint: rear_left_axle # Name of the joint.  
-  pid : {p: 20.0 , i: 0.0 , d: 0.0}
+  pid : {p: 200.0 , i: 0.0 , d: 0.0}
 
 controller_4: # change the name
-  type: effort_controllers/JointPositionController # Type of controller. 
+  type: velocity_controllers/JointVelocityController # Type of controller. 
   joint: rear_right_axle # Name of the joint.  
-  pid : {p: 20.0 , i: 0.0 , d: 0.0}
+  pid : {p: 200.0 , i: 0.0 , d: 0.0}
 
   # Controller 2
   # Controller 3
