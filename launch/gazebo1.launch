@@ -1,6 +1,8 @@
 <launch>
-  <include
-    file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+  <include file= "$(find gazebo_ros)/launch/empty_world.launch"> 
+    <arg name="world_name" value="$(find alt_car_assembly)/world/competition_arena.world"/> 
+  </include>
   <node
     name="tf_footprint_base"
     pkg="tf"
@@ -9,7 +11,7 @@
 
 
 
-  <param name="robot_description" textfile="$(find alt_car_assembly)/urdf/alt_car_assembly.urdf"/>
+  <param name="robot_description" textfile="$(find alt_car_assembly)/urdf/integrated_model.urdf"/>
 
   <rosparam command="load" file="$(find alt_car_assembly)/config/config_controllers.yaml"/>
 
@@ -27,7 +29,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find alt_car_assembly)/urdf/alt_car_assembly.urdf -urdf -model alt_car_assembly"
+    args="-file $(find alt_car_assembly)/urdf/integrated_model.urdf -urdf -model alt_car_assembly"
     output="screen" />
 
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
