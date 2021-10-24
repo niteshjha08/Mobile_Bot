@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="alt_car_assembly">
+  <link name="dummy_link"/>
+  <joint 
+    name="dummy_joint"
+    type="fixed">
+    <parent link="dummy_link"/>
+    <child link="chassis"/>
+  </joint>
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="-1.13008383898424E-16 0.0127 1.1234963901515E-16"
+        rpy="0 0 0" />
+      <mass
+        value="17.2299101764948" />
+      <inertia
+        ixx="1.32974914515101"
+        ixy="2.11758236813575E-20"
+        ixz="-3.01120212748904E-16"
+        iyy="2.05043247302463"
+        iyz="2.11758236813573E-20"
+        izz="0.722536002681863" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hub_f_l">
+    <inertial>
+      <origin
+        xyz="0 0.0324625099031435 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.334738405845382" />
+      <inertia
+        ixx="0.000566787961434065"
+        ixy="-1.39410525233639E-19"
+        ixz="2.10064170919066E-19"
+        iyy="0.000587960662686382"
+        iyz="7.40129452315766E-20"
+        izz="0.000875439911652352" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_f_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_f_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_steering"
+    type="revolute">
+    <origin
+      xyz="0.254 -0.34677 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="hub_f_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="wheel_f_l">
+    <inertial>
+      <origin
+        xyz="-3.88578058618805E-16 1.38777878078145E-17 -2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.926666637773504" />
+      <inertia
+        ixx="0.00141988958906164"
+        ixy="-1.64129739327946E-37"
+        ixz="-2.43945488809238E-19"
+        iyy="0.00141988958906164"
+        iyz="-4.69349834934246E-36"
+        izz="0.00194300680608435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_f_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_f_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.08255 0"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="hub_f_l" />
+    <child
+      link="wheel_f_l" />
+    <axis
+      xyz="0 0 1" />
+  	<limit
+	  effort="10"
+	  velocity="1" />
+  </joint>
+  <link
+    name="hub_f_r">
+    <inertial>
+      <origin
+        xyz="0 0.0324625099031435 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.334738405845383" />
+      <inertia
+        ixx="0.000566787961434066"
+        ixy="-3.32625042313524E-21"
+        ixz="-1.93970544921235E-19"
+        iyy="0.000587960662686382"
+        iyz="-8.83716172998184E-22"
+        izz="0.000875439911652352" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_f_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_f_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_steering"
+    type="revolute">
+    <origin
+      xyz="-0.254 -0.34677 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="hub_f_r" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+    lower="-3.14"
+    upper="3.14"
+    effort="10"
+    velocity="1" />
+    
+  </joint>
+  <link
+    name="wheel_f_r">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.926666637773504" />
+      <inertia
+        ixx="0.00141988958906164"
+        ixy="-1.6412973932795E-37"
+        ixz="3.40507244796229E-19"
+        iyy="0.00141988958906164"
+        iyz="-4.69349834934245E-36"
+        izz="0.00194300680608435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_f_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_f_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.08255 0"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="hub_f_r" />
+    <child
+      link="wheel_f_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+	  effort="10"
+	  velocity="1" />
+  </joint>
+  <link
+    name="hub_r_r">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0.0578625099031435 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.334738405845382" />
+      <inertia
+        ixx="0.000566787961434064"
+        ixy="1.32149634801042E-19"
+        ixz="-9.49695306454753E-20"
+        iyy="0.000587960662686381"
+        iyz="2.25089532101838E-22"
+        izz="0.000875439911652351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_r_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_r_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_steering"
+    type="fixed">
+    <origin
+      xyz="-0.254 0.34677 0.0254"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="hub_r_r" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_r_r">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0 1.66533453693773E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.926666637773503" />
+      <inertia
+        ixx="0.00141988958906164"
+        ixy="-1.64129739327948E-37"
+        ixz="1.94682052891282E-19"
+        iyy="0.00141988958906164"
+        iyz="-4.69349834934246E-36"
+        izz="0.00194300680608435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_r_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_r_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.10795 0"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="hub_r_r" />
+    <child
+      link="wheel_r_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+	  effort="10"
+	  velocity="1" />
+    
+  </joint>
+  <link
+    name="hub_r_l">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0.0578625099031435 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.334738405845383" />
+      <inertia
+        ixx="0.000566787961434065"
+        ixy="-1.60454472242266E-19"
+        ixz="-4.92158596450278E-20"
+        iyy="0.000587960662686383"
+        iyz="-1.01861746001102E-19"
+        izz="0.000875439911652353" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_r_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/hub_r_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_steering"
+    type="fixed">
+    <origin
+      xyz="0.254 0.34677 0.0254"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="hub_r_l" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_r_l">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.926666637773504" />
+      <inertia
+        ixx="0.00141988958906164"
+        ixy="-1.64129739327944E-37"
+        ixz="1.89278381288076E-19"
+        iyy="0.00141988958906164"
+        iyz="-4.69349834934246E-36"
+        izz="0.00194300680608435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_r_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alt_car_assembly/meshes/wheel_r_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_axle"
+    type="continuous">
+    <origin
+      xyz="0 0.10795 0"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="hub_r_l" />
+    <child
+      link="wheel_r_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+	  effort="10"
+	  velocity="1" />
+  </joint>
+
+  <transmission name="simple_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_steering">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_steering">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="simple_trans_2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_steering">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_steering">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="simple_trans_3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_left_axle">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_drive">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="simple_trans_4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_right_axle">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_drive">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin>
+  </gazebo>
+</robot>
